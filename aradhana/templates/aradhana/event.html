@@ -1,0 +1,27 @@
+{% extends 'aradhana/base.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="jumbotron">
+        <center>
+            <h1>Event Details</h1>
+            <p></p>
+            <h2>{{event}}</h2>
+            <h2>Category : {{event.category}}</h2>
+            <h2>Type : {{event.type}}</h2>
+            </center>
+            {% if total > 0 %}
+            <h2 style="font-size: 20px">Students registered with this event</h2>
+            <ul>
+            {% for student in students %}
+            <li><a href="/admin/aradhana/student/{{student.pk}}">{{student}}</a></li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+            <h2 style="font-size: 18px">Total number of students registered for this event</h2>
+            <h3 style="font-size: 16px;">{{total}}</h3>
+        </div>
+    </div>
+</div>
+{% endblock %}

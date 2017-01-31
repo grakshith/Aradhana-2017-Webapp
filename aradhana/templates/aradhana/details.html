@@ -1,0 +1,28 @@
+{% extends 'aradhana/base.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="jumbotron">
+        <center>
+        <h1>Aradhana 2017</h1>
+        <h1 style="font-size: 40px">SPICMACAY NITK</h1>
+        <h1 style="font-size: 20px">Registration Portal</h1>
+        </center>
+        <h1 style="font-size: 25px"><a href="/admin/">Please go here to register students</a></h1>
+        <p><a href="/static/files/Aradhana_EventsList.pdf">Events List</a></p>
+        <p><a href="/static/files/Aradhana2017_EventsSchedule.pdf">Events Schedule</a></p>
+        <h2>In case of any difficulties reach out to <a href="mailto:hehaichi@gmail.com">hehaichi@gmail.com</a> or +91-9482086849 </h2>
+        <h2>Aradhana Statistics</h2>
+        <p>Total number of students registered : {{ students }}</p>
+        <h2>Event Statistics</h2>
+        <h4>Click on the event to continue</h4>
+        <ul>
+        {% for event in events%}
+        <li><a href="/events/{{event.pk}}">{{event}}</a></li>
+        {% endfor %}
+        </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
